@@ -22,7 +22,7 @@ const AdminPage = () => {
   const deleteOrder = async (orderId) => {
     console.log('Deleting order with ID:', orderId); // Log the orderId
 
-    try {    
+    try {              //https://hotel-management-app-backend.vercel.app/
       await axios.delete(`https://hotel-management-app-backend.vercel.app/api/orders/${orderId}`);
       // Remove the deleted order from the state
       setOrders((prevOrders) => prevOrders.filter(order => order._id !== orderId));
