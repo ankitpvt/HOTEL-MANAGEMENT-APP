@@ -10,8 +10,8 @@ const app = express();
 app.use(bodyParser.json());
 // app.use(cors());
 app.use(cors({
-           
-    origin: 'https://hotel-management-app-frontend.vercel.app',  // Your actual frontend deployment URL
+           //https://hotel-management-app-frontend.vercel.app
+    origin: 'https://hotel-management-app-front.vercel.app',  // Your actual frontend deployment URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
 }));

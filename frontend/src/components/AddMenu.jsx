@@ -11,7 +11,7 @@ const AddMenu = () => {
     useEffect(() => {
         const fetchMenu = async () => {
             try {
-                const response = await axios.get('https://hotel-management-app-backend.vercel.app/api/menu');
+                const response = await axios.get('https://hotel-management-app-back.vercel.app/api/menu');
                 setMenu(response.data);  // Set the fetched menu items
             } catch (error) {
                 console.error('Error fetching menu items:', error);
@@ -28,7 +28,7 @@ const AddMenu = () => {
         const newMenuItem = { name, price, category };
 
         try {
-            const response = await axios.post('https://hotel-management-app-backend.vercel.app/api/menu', newMenuItem);
+            const response = await axios.post('https://hotel-management-app-back.vercel.app/api/menu', newMenuItem);
 
             // Clear the form fields after submission
             setName('');
@@ -49,7 +49,7 @@ const AddMenu = () => {
     const deleteMenu = async (id) => {
         //yes its run
         try {
-            const response = await axios.delete(`https://hotel-management-app-backend.vercel.app/api/menu/${id}`);
+            const response = await axios.delete(`https://hotel-management-app-back.vercel.app/api/menu/${id}`);
             
             // Update the state to remove the deleted item
             setMenu(menu.filter((item) => item._id !== id));
