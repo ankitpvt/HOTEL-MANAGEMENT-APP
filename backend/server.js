@@ -30,9 +30,9 @@ mongoose.connect('mongodb+srv://ankit123:pn60Uzgt38WUQnul@cluster1.wo248.mongodb
   });
       
 
-// Routes
-app.use('/api/menu', menuRoutes);
-app.use('/api/orders', orderRoutes);
+// // Routes
+// app.use('/api/menu', menuRoutes);
+// app.use('/api/orders', orderRoutes);
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
