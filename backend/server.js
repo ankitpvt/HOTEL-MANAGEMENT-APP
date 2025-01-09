@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 // app.use(cors());
 app.use(cors({
-           //https://hotel-management-app-frontend.vercel.app
+           
     origin: 'https://hotel-management-app-frontend.vercel.app',  // Your actual frontend deployment URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
@@ -18,10 +18,10 @@ app.use(cors({
 
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/hotel', {
+mongoose.connect('mongodb+srv://ankit123:pn60Uzgt38WUQnul@cluster1.wo248.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-}).then(() => console.log("MongoDB connected"))
+}).then(() => console.log("MongoDB connected to the atlas"))
   .catch(err => console.error("Connection error:", err));
 
 // Routes

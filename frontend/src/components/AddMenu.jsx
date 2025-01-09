@@ -47,6 +47,7 @@ const AddMenu = () => {
 
     // Delete a menu item
     const deleteMenu = async (id) => {
+        //yes its run
         try {
             const response = await axios.delete(`https://hotel-management-app-backend.vercel.app/api/menu/${id}`);
             
