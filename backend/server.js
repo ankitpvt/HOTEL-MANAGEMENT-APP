@@ -8,7 +8,13 @@ const orderRoutes = require('./routes/orderRoutes');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: 'https://hotel-management-app-frontend.vercel.app',  // Your actual frontend deployment URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+}));
+
 
 // MongoDB connection
 mongoose.connect('mongodb://localhost:27017/hotel', {
