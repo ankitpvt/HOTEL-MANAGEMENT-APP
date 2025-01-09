@@ -34,5 +34,5 @@ mongoose.connect('mongodb+srv://ankit123:pn60Uzgt38WUQnul@cluster1.wo248.mongodb
 // app.use('/api/menu', menuRoutes);
 // app.use('/api/orders', orderRoutes);
 
-const PORT = 5000;
+const PORT = 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
