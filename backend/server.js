@@ -24,6 +24,12 @@ mongoose.connect('mongodb+srv://ankit123:pn60Uzgt38WUQnul@cluster1.wo248.mongodb
 }).then(() => console.log("MongoDB connected to the atlas"))
   .catch(err => console.error("Connection error:", err));
 
+
+  app.get("/", (req, res) => {
+    res.send("Welcome to the backend");
+  });
+      
+
 // Routes
 app.use('/api/menu', menuRoutes);
 app.use('/api/orders', orderRoutes);
