@@ -2,13 +2,13 @@
  import React, { useState, useEffect} from "react";
  import axios from "axios";
  import './MenuCard.css';
-
+ import { Link } from "react-router-dom";
 const MenuCard = () => {
     const [menu, setMenu] = useState([]);
   
     useEffect(() => {
       const fetchMenu = async () => {   //https://hotel-management-app-backend.vercel.app/
-        const response = await axios.get("https://hotel-management-app-back.vercel.app/api/menu");
+        const response = await axios.get("http://localhost:5000/api/menu");
         setMenu(response.data);
       };
       fetchMenu();
@@ -26,7 +26,7 @@ const MenuCard = () => {
     //   addOrder(order);
   
       // Optionally, send the order to the backend
-      const response = await axios.post("https://hotel-management-app-back.vercel.app/api/orders", order);
+      const response = await axios.post("http://localhost:5000/api/orders", order);
       alert(`Order placed successfully! Order ID: ${response.data._id}`);
     };
   
@@ -42,6 +42,7 @@ const MenuCard = () => {
             </li>
           ))}
         </ul>
+        <Link to='/login'>Go to Admin Page</Link>
       </div>
     );
   };

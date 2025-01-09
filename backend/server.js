@@ -8,17 +8,18 @@ const orderRoutes = require('./routes/orderRoutes');
 
 const app = express();
 app.use(bodyParser.json());
-// app.use(cors());
-app.use(cors({
-         //https://hotel-management-app-front.vercel.app 
-    origin: process.env.ANKIT,  // Your actual frontend deployment URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-}));
+app.use(cors());
+// app.use(cors({
+//          //https://hotel-management-app-front.vercel.app 
+//     origin: process.env.ANKIT,  // Your actual frontend deployment URL
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     credentials: true,
+// }));
 
 
 // MongoDB connection
-mongoose.connect('mongodb+srv://ankit123:pn60Uzgt38WUQnul@cluster1.wo248.mongodb.net/', {
+//mongodb+srv://ankit123:pn60Uzgt38WUQnul@cluster1.wo248.mongodb.net
+mongoose.connect('mongodb://localhost:27017/hotel', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => console.log("MongoDB connected to the atlas"))
@@ -31,8 +32,8 @@ mongoose.connect('mongodb+srv://ankit123:pn60Uzgt38WUQnul@cluster1.wo248.mongodb
       
 
 // // Routes
-// app.use('/api/menu', menuRoutes);
-// app.use('/api/orders', orderRoutes);
+app.use('/api/menu', menuRoutes);
+app.use('/api/orders', orderRoutes);
 
-const PORT = 3000;
+const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
