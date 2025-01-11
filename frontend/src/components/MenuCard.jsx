@@ -8,8 +8,8 @@ const MenuCard = () => {
   
     useEffect(() => {
       const fetchMenu = async () => {   //https://hotel-management-app-backend.vercel.app/
-        const response = await axios.get("https://backend-vercel-inky.vercel.app/api/menu");
-        setMenu(response.data);
+        const response = await axios.get("https://backend-vercel-3slxhsd3m-ankitpvts-projects.vercel.app/api/menu");
+        setMenu(response.data);        //https://backend-vercel-3slxhsd3m-ankitpvts-projects.vercel.app
       };
       fetchMenu();
     }, []);
@@ -26,7 +26,7 @@ const MenuCard = () => {
     //   addOrder(order);
   
       // Optionally, send the order to the backend
-      const response = await axios.post("https://backend-vercel-inky.vercel.app/api/orders", order);
+      const response = await axios.post("https://backend-vercel-3slxhsd3m-ankitpvts-projects.vercel.app/api/orders", order);
       alert(`Order placed successfully! Order ID: ${response.data._id}`);
     };
   
