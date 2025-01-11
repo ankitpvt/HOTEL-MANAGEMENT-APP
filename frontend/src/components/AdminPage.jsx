@@ -8,7 +8,7 @@ const AdminPage = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {                             //https://hotel-management-app-backend.vercel.app/
-        const response = await axios.get("http://localhost:5000/api/orders");
+        const response = await axios.get("https://backend-vercel-inky.vercel.app/api/orders");
         setOrders(response.data);  // Set orders from the response
       } catch (error) {
         console.error("Error fetching orders:", error);
@@ -23,7 +23,7 @@ const AdminPage = () => {
     console.log('Deleting order with ID:', orderId); // Log the orderId
 
     try {              //https://hotel-management-app-backend.vercel.app/
-      await axios.delete(`http://localhost:5000/api/orders/${orderId}`);
+      await axios.delete(`https://backend-vercel-inky.vercel.app/api/orders/${orderId}`);
       // Remove the deleted order from the state
       setOrders((prevOrders) => prevOrders.filter(order => order._id !== orderId));
       alert("Order deleted successfully");

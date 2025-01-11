@@ -8,7 +8,7 @@ const MenuCard = () => {
   
     useEffect(() => {
       const fetchMenu = async () => {   //https://hotel-management-app-backend.vercel.app/
-        const response = await axios.get("http://localhost:5000/api/menu");
+        const response = await axios.get("https://backend-vercel-inky.vercel.app/api/menu");
         setMenu(response.data);
       };
       fetchMenu();
@@ -26,7 +26,7 @@ const MenuCard = () => {
     //   addOrder(order);
   
       // Optionally, send the order to the backend
-      const response = await axios.post("http://localhost:5000/api/orders", order);
+      const response = await axios.post("https://backend-vercel-inky.vercel.app/api/orders", order);
       alert(`Order placed successfully! Order ID: ${response.data._id}`);
     };
   
